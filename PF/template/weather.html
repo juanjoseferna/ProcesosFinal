@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="weather-container">
+        <div class="weather-section">
+            <h2 class="weather-title">Weather in Cali, Colombia</h2>
+        <img src="{% static 'assets/weather.png' %}" alt="weather-icon" class="weather-icon">
+        {% if clima %}
+            <p class="weather-info">Temperature: {{ clima.temperatura }}°C</p>
+            <p class="weather-info">Wind Speed: {{ clima.viento }} km/h</p>
+            <p class="weather-info">Wind Direction: {{ clima.direccion_viento }}°</p>
+            <p class="weather-info">Weather Condition: {{ clima.tiempo }}</p>
+            {% if clima.clima_apto %}
+                <p class="weather-state">Weather suitable for takeoff</p>
+            {% else %}
+                <p class="weather-state">Weather NOT suitable for takeoff</p>
+            {% endif %}
+        {% else %}
+            <p class="weather-info">Failed to retrieve weather information.</p>
+        {% endif %}
+    </div>
+        </div>
+</body>
+</html>
+{% endblock %}

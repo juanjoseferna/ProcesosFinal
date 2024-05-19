@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/8607651.png' %}">
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+        <h2>Log in</h2>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <i class="fa fa-eye-slash"></i>
+            </div>
+            <button type="submit">LOGIN</button>
+        </form>
+        {% if messages %}
+        <br>
+        <div class="error" class="login-error">
+            {{ messages }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Dron</title>
+</head>
+<body>
+    <form class="form-dron" method="POST">
+        {% csrf_token %}
+        <h1>Our devices</h1>
+        <h3>Select the device to send</h3>
+        <select class="item-select" name="dispositivo" id="dispositivo" required>
+            <option class="item-select-option" value="robot">Robot</option>
+            <option class="item-select-option" value="dron">Dron</option>
+        </select>
+        <input class="item-input" type="text" name="destination" id="destination" placeholder="Destination point" required>
+        <input class="item-input" type="text" name="product" id="product" placeholder="Enter the product or service" required>
+        <input class="item-input" type="text" name="weight" id="weight" placeholder="Enter the weight (if it's a service, put 0)" required>
+        <input class="item-input" type="text" name="emit" id="emit" placeholder="Enter the name of the issuer" required>
+        <input class="item-input" type="text" name="phone1" id="phone1" placeholder="Enter the phone number of the issuer" required>
+        <input class="item-input" type="text" name="email1" id="email1" placeholder="Enter the email of the issuer" required>
+        <input class="item-input" type="text" name="receive" id="receive" placeholder="Enter the name of the receiver" required>
+        <input class="item-input" type="text" name="phone2" id="phone2" placeholder="Enter the phone number of the receiver" required>
+        <input class="item-input" type="text" name="email2" id="email2" placeholder="Enter the email of the receiver" required>
+        <input type="date" class="item-input" name="date" id="date" required>
+        <input type="time" class="item-input" name="time" id="time" step="1800" required>
+        <button class="dron-button">Send</button>
+        {% if messages %}
+        <br>
+        {% if flag %}
+        <div class="success">
+            {{ messages }}
+        </div>
+        {% else %}
+        <div class="error">
+            {{ messages }}
+        </div>
+        {%endif%}
+        {% endif %}
+    </form>
+</body>
+</html>
+{% endblock %}

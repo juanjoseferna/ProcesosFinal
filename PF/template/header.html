@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/8607651.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="">
+        <div class="nav-container">
+        <nav>
+            <div class="logo">
+                <img src="{% static 'assets/8607651.png' %}" alt="PaticosLogo" >
+                <h4>PaticOS</h4>
+            </div>
+            <ul>
+                <li><a href="{% url 'menu' %}"><i class="fas fa-home"></i></a></li>
+                <li><a href="{% url 'weather' %}"><i class="fas fa-cloud-sun"></i> </a></li>
+                <li><a href="{% url 'deliver' %}"><i class="fas fa-truck"></i> </a></li>
+                <li><a href="{% url 'devices' %}"><i class="fas fa-mobile-alt"></i> </a></li>
+                <li><a href="{% url 'history' %}"><i class="fas fa-history"></i> </a></li>
+                <li><a href="{% url 'login' %}"><i class="fas fa-sign-out-alt"></i> </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="padding-top: 70px;">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,313 @@
+body {
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(191, 220, 251, 0.5);
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    margin-top: 50px;
+    text-align: center;
+    
+}
+.login-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+.login-container .input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+.login-container .input-group input {
+    width: calc(100% - 40px);
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.options a{
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.login-container button:hover {
+    background-color: #0056b3;
+}
+.login-container .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.login-container .options a {
+    color: #007bff;
+    text-decoration: none;
+}
+.login-container .options a:hover {
+    text-decoration: underline;
+}
+.login-container .options label {
+    color: #333;
+    font-size: 14px;
+}
+.login-container .options input[type="checkbox"] {
+    margin-right: 5px;
+}
+.login-container .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 50px;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.logo h4 {
+    font-size: 20px;
+    margin: 0;
+    color: #bbb;
+}
+
+/* ----- Nav ------ */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #104379;
+    color: white;
+    position: fixed;
+    justify-content: space-between;
+}
+
+nav {
+    background: #104379;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #84909c;
+}
+
+
+/* ---- Weather ---- */
+.weather-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.weather-container li{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+.weather-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #84909c;
+}
+
+/* ---Main--- */
+
+.main-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-container .container-img {
+    margin-top: 50px;
+    width: 500px;
+    height: 500px;
+}
+
+/* Deliver */
+.form-dron {
+    margin: 0 auto;
+    width: 900px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-dron h1, h3 {
+    text-align: center;
+    color: #898e92;
+}
+
+.form-dron button {
+    background-color: #5383b6;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-dron button:hover {
+    background-color: #104379;
+}
+
+.form-dron .item-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: #5383b6 1px solid;
+    font-size: 16px;
+}
+
+option {
+    font-size: 16px;
+}
+
+.form-dron .item-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: #5383b6 1px solid;
+    font-size: 16px;
+    color: black;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ---- devices ---- */
+
+.table {
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+.device-title{
+    text-align: center;
+    color: #84909c;
+    padding: 0;
+    margin: 0;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.table th {
+    border-right: #c2c2c2 2px solid;
+}
+
+.table th:last-child {
+    border-right: none;
+}
+
+.table .thead-light {
+    text-align: center;
+    background-color: #5383b6;
+    color: white;
+}
+
+.table tbody{
+    background-color: white;
+}
+
+.table tbody tr:hover {
+    background-color: rgb(205, 215, 227, 0.5);
+}

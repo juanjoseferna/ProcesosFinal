@@ -1,0 +1,96 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="device-title">Drones</h2><br>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table ">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Serial Number</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Status</th>
+                            <th>Reservations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for drone in drones %}
+                        <tr>
+                            <td>{{ drone.id }}</td>
+                            <td>{{ drone.name }}</td>
+                            <td>{{ drone.serialNumber }}</td>
+                            <td>{{ drone.brand }}</td>
+                            <td>{{ drone.model }}</td>
+                            <td>{{ drone.status }}</td>
+                            <td>
+                                <ul>
+                                    {% for k,v in drone.reservations.items %}
+                                        {% for h in v%}
+                                        - {{ k }} {{ h }}<br>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h2 class="device-title">Robots</h2><br>
+        <div class="row">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Serial Number</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Status</th>
+                        <th>Reservations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for robot in robots %}
+                    <tr>
+                        <td>{{ robot.id }}</td>
+                        <td>{{ robot.name }}</td>
+                        <td>{{ robot.serialNumber }}</td>
+                        <td>{{ robot.brand }}</td>
+                        <td>{{ robot.model }}</td>
+                        <td>{{ robot.status }}</td>
+                        <td>
+                            <ul>
+                                {% for k,v in robot.reservations.items %}
+                                    {% for h in v%}
+                                        - {{ k }} {{ h }}<br>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
